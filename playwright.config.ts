@@ -1,4 +1,9 @@
 import { defineConfig, devices } from '@playwright/test';
+/// <reference types="node" />
+
+declare const process: {
+  env: Record<string, string | undefined>;
+};
 
 /**
  * Read environment variables from file.
@@ -12,7 +17,7 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './tests',
+  testDir: './Playwright_automation',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
